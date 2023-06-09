@@ -38,6 +38,7 @@ class OrdersController < ApplicationController
       .permit(:name,
               :email,
               :telephone,
-              :delivery_address)
+              :delivery_address,
+              :payment_method_id,)
   end
 end
