@@ -3,6 +3,7 @@
 class OrdersController < ApplicationController
   def new
     @order = Order.new
+    @order.order_products.build
   end
 
   def confirm
@@ -42,6 +43,7 @@ class OrdersController < ApplicationController
               :payment_method_id,
               :other_comment,
               :direct_mail_enabled,
-              inflow_source_ids: [])
+              inflow_source_ids: [],
+              order_products_attributes: %i[product_id quantity])
   end
 end
